@@ -1,0 +1,11 @@
+<div>
+  <p><%= title %></p>
+  <img src="<%= img_url %>" alt="<%= title %>" />
+
+  <form action="/dishes/<%= id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE" />
+    <button type="submit">Delete</button>
+  </form>
+
+  <a href="/dishes/<%= id %>/edit">Edit</a>
+</div>

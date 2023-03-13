@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/style.css" />
+    <title>Food Hunting</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <span>Food Hunting</span>
+      </div>
+      <div class="links">
+        <ul>
+          <li><a href="#">Share</a></li>
+        </ul>
+      </div>
+      <div class="search">
+        <form action="#" method="post">
+          <input type="text" name="search" placeholder="Seach by dish" />
+        </form>
+      </div>
+      <div class="auth">
+        <% if(user.id){ %>
+        <p><%= user.email %></p>
+        <% }else{ %>
+
+        <a href="#"><img src="/assets/user-interface.png" alt="" /></a>
+        <% } %>
+      </div>
+    </nav>
+
+    <div class="container"><%- body %></div>
+  </body>
+</html>

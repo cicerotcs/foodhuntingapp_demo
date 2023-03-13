@@ -1,0 +1,22 @@
+<h4 class="latest-pictures">Latest in map area</h4>
+<div class="card-group">
+  <% data.forEach(item => { %>
+  <div class="card">
+    <div class="card-img">
+      <img src="<%= item.img_url %>" alt="<%= item.title %>" />
+    </div>
+    <div class="card-body">
+      <h2><a href="/dishes/<%= item.id %>"><%= item.title %></a></h2>
+      <p><span>at</span>China Grill</p>
+      <div class="card-footer">
+        <div>
+          <img src="/assets/clock.png" alt="" /> <small>2 minutes</small>
+        </div>
+        <div>
+          <img src="/assets/location.png" alt="" /> <span>New York</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>
