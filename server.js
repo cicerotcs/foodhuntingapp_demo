@@ -9,6 +9,7 @@ const authRoutes = require("./routes/authRoutes");
 const session = require("express-session");
 const expressLayouts = require("express-ejs-layouts");
 const { getUser } = require("./middleware/auth");
+const MemoryStore = require("memorystore")(session);
 
 const app = express();
 
@@ -28,18 +29,10 @@ const sess = {
   cookie: {
     maxAge: 3600000, //hour
   },
+  store: new MemoryStore({
+    checkPeriod: 86400000, // prune expired entries every 24h
+  }),
 };
-
-// app.use(
-//   session({
-//     secret: process.env.SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: true,
-//     cookie: {
-//       maxAge: 3600000, //hour
-//     },
-//   })
-// );
 
 if (app.get("env") === "production") {
   app.set("trust proxy", 1); // trust first proxy
